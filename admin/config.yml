@@ -1,4 +1,3 @@
-cat > admin/config.yml << 'EOF'
 backend:
   name: github
   repo: LukasKlas/tj-sokol-chotec
@@ -17,8 +16,7 @@ collections:
     fields:
       - {label: Nadpis, name: title, widget: string}
       - {label: Datum, name: date, widget: datetime}
-      - {label: Titulní foto, name: image, widget: image, required: false}
+      - {label: Titulni foto, name: image, widget: image, required: false}
       - {label: Obsah, name: body, widget: markdown}
       - {label: Kategorie, name: categories, widget: select,
          options: [Aktuality, Zapasy, Mladez, Klub]}
-EOF
