@@ -1,0 +1,24 @@
+cat > admin/config.yml << 'EOF'
+backend:
+  name: github
+  repo: LukasKlas/tj-sokol-chotec
+  branch: main
+  base_url: https://magical-sprinkles-da8069.netlify.app
+
+media_folder: assets/images/uploads
+public_folder: /assets/images/uploads
+
+collections:
+  - name: posts
+    label: Aktuality
+    folder: _posts
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: Nadpis, name: title, widget: string}
+      - {label: Datum, name: date, widget: datetime}
+      - {label: Titulní foto, name: image, widget: image, required: false}
+      - {label: Obsah, name: body, widget: markdown}
+      - {label: Kategorie, name: categories, widget: select,
+         options: [Aktuality, Zapasy, Mladez, Klub]}
+EOF
