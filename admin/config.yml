@@ -1,8 +1,7 @@
-backend:
+bbackend:
   name: github
   repo: LukasKlas/tj-sokol-chotec
   branch: main
-  base_url: https://magical-sprinkles-da8069.netlify.app
 
 media_folder: assets/images/uploads
 public_folder: /assets/images/uploads
