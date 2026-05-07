@@ -1,4 +1,4 @@
-bbackend:
+backend:
   name: github
   repo: LukasKlas/tj-sokol-chotec
   branch: main
