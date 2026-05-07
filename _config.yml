@@ -2,8 +2,8 @@ site: TJ Sokol Choteč
 
 title: TJ Sokol Choteč
 description: Fotbalový oddíl TJ Sokol Choteč. Zápasy, výsledky a aktuality z Hotče.
-url: "https://LukasKlas.github.io"
-baseurl: "/tj-sokol-chotec"
+url: "https://tj-sokol-chotec.pages.dev"
+baseurl: ""
 email: jaroslav.minovsky@gmail.com
 accent_color: "#7B1F3F"
 
