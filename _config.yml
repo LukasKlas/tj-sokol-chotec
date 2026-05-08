@@ -1,11 +1,14 @@
-site: TJ Sokol Choteč
-
 title: TJ Sokol Choteč
-description: Fotbalový oddíl TJ Sokol Choteč. Zápasy, výsledky a aktuality z Hotče.
+description: Fotbalový oddíl TJ Sokol Choteč. Zápasy, výsledky a aktuality z Choteče.
 url: "https://tj-sokol-chotec.pages.dev"
 baseurl: ""
 email: jaroslav.minovsky@gmail.com
 accent_color: "#7B1F3F"
+
+# Klub
+klub_nazev: "TJ Sokol Choteč"
+klub_rok: "1943"
+sezona: "2025 / 26"
 
 collections:
   pages:
@@ -14,46 +17,28 @@ collections:
   posts:
     output: true
     permalink: /blog/:slug
-  projects:
-    output: true
-    permalink: /project/:slug
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
     values:
       layout: "default"
-  -
-    scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "page"
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
-  -
-    scope:
+  - scope:
       path: ""
-      type: "projects"
+      type: "pages"
     values:
-      layout: "project"
+      layout: "page"
 
 markdown: kramdown
 highlighter: rouge
 
 kramdown:
   input: GFM
-  syntax_highlighter_opts:
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
-      start_line: 1
 
 sass:
   style: compressed
@@ -62,7 +47,16 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-paginate
 
-paginate: 7
+paginate: 9
 paginate_path: "/blog/page-:num/"
 future: true
+
+exclude:
+  - sveltia-cms-auth
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor

@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<section class="section" style="padding-top: 3rem;">
+  <div class="wrap">
+    <div class="section-header">
+      <h2 class="section-title">Novinky</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="blog-list">
+      {% for post in site.posts %}
+      <article class="blog-row">
+        {% if post.featured_image %}
+        <a href="{{ post.url | relative_url }}" class="blog-row__img-wrap">
+          <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}" class="blog-row__img">
+        </a>
+        {% endif %}
+        <div class="blog-row__content">
+          <span class="blog-row__tag">{{ post.kategorie | default: "Novinky" }}</span>
+          <h3 class="blog-row__title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          <time class="blog-row__date">{{ post.date | date: "%-d. %-m. %Y" }}</time>
+          {% if post.excerpt %}
+          <p class="blog-row__excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+          {% endif %}
+          <a href="{{ post.url | relative_url }}" class="blog-row__link">Číst dále →</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

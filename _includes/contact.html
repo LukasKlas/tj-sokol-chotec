@@ -1,0 +1,30 @@
+<section class="contact" id="kontakt">
+  <button class="contact__close js-contact-close" aria-label="Zavřít">✕</button>
+  <div class="wrap">
+    <div class="contact__wrap">
+      <header class="contact__header">
+        <h2>Kontaktujte nás</h2>
+        <p>Raději email? Napište na <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      </header>
+      <form method="POST" action="{{ site.data.settings.contact_settings.form_action | default: 'https://formspree.io/f/YOUR_ID' }}" class="contact__form">
+        <div class="input-group">
+          <label for="name">Jméno</label>
+          <input type="text" name="name" id="name" placeholder="Jak vám máme říkat?" required />
+        </div>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="Váš emailová adresa" required />
+        </div>
+        <div class="input-group">
+          <label for="message">Zpráva</label>
+          <textarea name="message" id="message" placeholder="Co vám leží na srdci?" rows="4" required></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="Zpráva z webu TJ Sokol Choteč" />
+        <input type="text" name="_gotcha" style="display:none" />
+        <div class="input-submit">
+          <input type="submit" class="btn btn-primary" value="Odeslat zprávu">
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

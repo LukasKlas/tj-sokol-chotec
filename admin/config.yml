@@ -2,6 +2,7 @@ backend:
   name: github
   repo: LukasKlas/tj-sokol-chotec
   branch: main
+  base_url: https://sveltia-cms-auth.YOUR_WORKER.workers.dev  # ← URL z kroku 2
 
 media_folder: assets/images/uploads
 public_folder: /assets/images/uploads

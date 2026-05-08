@@ -1,0 +1,11 @@
+- nazev: "Tým"
+  url: "/tym"
+
+- nazev: "Zápasy"
+  url: "/zapasy"
+
+- nazev: "Tabulka"
+  url: "/tabulka"
+
+- nazev: "Novinky"
+  url: "/blog"
