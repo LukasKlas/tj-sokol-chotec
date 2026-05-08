@@ -1,7 +1,7 @@
 ---
 title: Vítěztví nad TJ Krňany 2:4
 date: 2026-05-02T20:30:00
-image: /assets/images/uploads/PHOTO-2026-05-04-20-58-38_25.jpg
+featured_image: /assets/images/uploads/PHOTO-2026-05-04-20-58-38_25.jpg
 categories: Zapasy
 ---
 
