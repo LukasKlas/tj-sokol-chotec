@@ -65,3 +65,19 @@ collections:
               - {label: Jméno, name: jmeno, widget: string}
               - {label: Pozice, name: pozice, widget: select, options: [Brankář, Obránce, Záložník, Útočník]}
               - {label: Foto, name: foto, widget: image, required: false}
+
+      - name: "partneri"
+        label: "Partneři klubu"
+        file: "_data/partneri.yml"
+        editor:
+          preview: false
+        fields:
+          - label: "Partneři"
+            name: "items"
+            widget: "list"
+            label_singular: "Partner"
+            summary: "{{fields.nazev}}"
+            fields:
+              - {label: Název, name: nazev, widget: string}
+              - {label: Logo, name: logo, widget: image}
+              - {label: Web, name: url, widget: string, required: false}

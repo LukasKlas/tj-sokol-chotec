@@ -5,9 +5,7 @@ description: TJ Sokol Choteč – klub s historií, srdcem a odhodláním. Sledu
 featured_image: /images/social.jpg
 ---
 
-<!-- =============================================
-     HERO
-     ============================================= -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
     <p class="hero-tag">Sezóna {{ site.sezona }}</p>
@@ -24,11 +22,7 @@ featured_image: /images/social.jpg
   </div>
 </section>
 
-
-<!-- =============================================
-     STATISTIKY
-     Data: _data/statistiky.yml
-     ============================================= -->
+<!-- STATISTIKY -->
 <div class="stats-bar">
   {% for stat in site.data.statistiky %}
   <div class="stat">
@@ -38,11 +32,7 @@ featured_image: /images/social.jpg
   {% endfor %}
 </div>
 
-
-<!-- =============================================
-     NEJBLIŽŠÍ ZÁPAS
-     Data: _data/zapasy.yml (typ: nadchazejici)
-     ============================================= -->
+<!-- NEJBLIŽŠÍ ZÁPAS -->
 {% assign nadchazejici = site.data.zapasy | where: "typ", "nadchazejici" | first %}
 {% if nadchazejici %}
 <section class="next-match" style="max-width: 1440px; margin: 0 auto;">
@@ -67,11 +57,7 @@ featured_image: /images/social.jpg
 </section>
 {% endif %}
 
-
-<!-- =============================================
-     PROGRAM ZÁPASŮ
-     Data: _data/zapasy.yml
-     ============================================= -->
+<!-- ZÁPASY - poslední, nejbližší, následující -->
 <section class="section" id="zapasy">
   <div class="wrap">
     <div class="section-header">
@@ -80,27 +66,42 @@ featured_image: /images/social.jpg
       <a href="/zapasy" class="section-link">Všechny →</a>
     </div>
     <div class="matches">
-      {% for zapas in site.data.zapasy limit: 5 %}
+      {% assign vysledky = site.data.zapasy | where: "typ", "vysledek" %}
+      {% assign posledni = vysledky | last %}
+      {% if posledni %}
       <div class="match">
-        <span class="match-date">{{ zapas.datum }}</span>
-        <span class="match-team match-team--home">{{ zapas.domaci }}</span>
-        <span class="match-score {% if zapas.typ == 'vysledek' %}match-score--played{% endif %}">
-          {{ zapas.skore }}
-        </span>
-        <span class="match-team match-team--away">{{ zapas.hoste }}</span>
-        <span class="match-venue">{{ zapas.misto }}</span>
+        <span class="match-date">{{ posledni.datum }}</span>
+        <span class="match-team match-team--home">{{ posledni.domaci }}</span>
+        <span class="match-score match-score--played">{{ posledni.skore }}</span>
+        <span class="match-team match-team--away">{{ posledni.hoste }}</span>
+        <span class="match-venue">{{ posledni.misto }}</span>
       </div>
-      {% endfor %}
+      {% endif %}
+      {% if nadchazejici %}
+      <div class="match">
+        <span class="match-date">{{ nadchazejici.datum }}</span>
+        <span class="match-team match-team--home">{{ nadchazejici.domaci }}</span>
+        <span class="match-score">{{ nadchazejici.skore }}</span>
+        <span class="match-team match-team--away">{{ nadchazejici.hoste }}</span>
+        <span class="match-venue">{{ nadchazejici.misto }}</span>
+      </div>
+      {% endif %}
+      {% assign program = site.data.zapasy | where: "typ", "program" %}
+      {% assign nasledujici = program | first %}
+      {% if nasledujici %}
+      <div class="match">
+        <span class="match-date">{{ nasledujici.datum }}</span>
+        <span class="match-team match-team--home">{{ nasledujici.domaci }}</span>
+        <span class="match-score">{{ nasledujici.skore }}</span>
+        <span class="match-team match-team--away">{{ nasledujici.hoste }}</span>
+        <span class="match-venue">{{ nasledujici.misto }}</span>
+      </div>
+      {% endif %}
     </div>
   </div>
 </section>
 
-
-
-<!-- =============================================
-     NOVINKY
-     Data: _posts/
-     ============================================= -->
+<!-- NOVINKY -->
 <section class="section" id="novinky">
   <div class="wrap">
     <div class="section-header">
@@ -121,5 +122,28 @@ featured_image: /images/social.jpg
       </a>
       {% endfor %}
     </div>
+  </div>
+</section>
+
+<!-- PARTNEŘI -->
+<section class="section partneri">
+  <div class="wrap">
+    <div class="section-header">
+      <h2 class="section-title">Partneři klubu</h2>
+      <div class="section-line"></div>
+    </div>
+   <div class="partneri-grid">
+    {% for partner in site.data.partneri %}
+    <div class="partner-item">
+    {% if partner.url %}<a href="{{ partner.url }}" target="_blank">{% endif %}
+    {% if partner.logo and partner.logo != "" %}
+    <img src="{{ partner.logo | relative_url }}" alt="{{ partner.nazev }}" class="partner-logo">
+    {% else %}
+    <span class="partner-placeholder">{{ partner.nazev }}</span>
+    {% endif %}
+    {% if partner.url %}</a>{% endif %}
+  </div>
+  {% endfor %}
+</div>
   </div>
 </section>
