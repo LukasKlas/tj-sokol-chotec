@@ -133,7 +133,7 @@ featured_image: /images/social.jpg
       <div class="section-line"></div>
     </div>
    <div class="partneri-grid">
-    {% for partner in site.data.partneri %}
+    {% for partner in site.data.partneri.items %}
     <div class="partner-item">
     {% if partner.url %}<a href="{{ partner.url }}" target="_blank">{% endif %}
     {% if partner.logo and partner.logo != "" %}
