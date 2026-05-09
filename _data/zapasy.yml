@@ -1,39 +1,22 @@
-- datum: "26. 4. 2026"
-  domaci: TJ Sokol Choteč"
-  hoste: "TJ Slovan Hradišťko"
-  skore: "1 : 7"
-  cas: "17:00"
-  misto: "Domov"
-  typ: "vysledek"
-
-- datum: "2. 5. 2026"
-  domaci: "TJ Krňany"
-  hoste: "TJ Sokol Choteč"
-  skore: "2 : 4"
-  cas: "17:00"
-  misto: "Venku"
-  typ: "vysledek"
-
-- datum: "10. 5. 2026"
-  domaci: "TJ Sokol Choteč"
-  hoste: "FK Horoměřice"
-  skore: "– : –"
-  cas: "17:00"
-  misto: "Domov"
-  typ: "nadchazejici"
-
-- datum: "16. 5. 2026"
-  domaci: "SK Sokol Zlatníky"
-  hoste: "TJ Sokol Choteč"
-  skore: "– : –"
-  cas: "17:00"
-  misto: "Venku"
-  typ: "program"
-
-- datum: "24. 5. 2026"
-  domaci: "TJ Sokol Choteč"
-  hoste: "TJ Sokol Červený Újezd A"
-  skore: "– : –"
-  cas: "17:00"
-  misto: "Domov"
-  typ: "program"
+items:
+  - datum: 10.5.2026
+    domaci: TJ Sokol Choteč
+    hoste: FK Horoměřice
+    skore: '– : –'
+    cas: 17:00
+    misto: Domov
+    typ: nadchazejici
+  - datum: 2.5.2206
+    domaci: TJ Krňany
+    hoste: TJ Sokol Choteč
+    skore: 2:4
+    cas: 17:00
+    misto: Venku
+    typ: vysledek
+  - datum: 16.5.2026
+    domaci: SK Sokol Zlatníky
+    hoste: TJ Sokol Choteč
+    skore: '– : –'
+    cas: 17:00
+    misto: Venku
+    typ: program
