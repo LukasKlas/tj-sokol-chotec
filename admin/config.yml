@@ -81,3 +81,23 @@ collections:
               - {label: Název, name: nazev, widget: string}
               - {label: Logo, name: logo, widget: image}
               - {label: Web, name: url, widget: string, required: false}
+
+      - name: "galerie"
+        label: "Galerie"
+        file: "_data/galerie.yml"
+        editor:
+          preview: false
+        fields:
+          - label: "Fotky"
+            name: "fotky"
+            widget: "list"
+            fields:
+              - {label: Fotka, name: src, widget: image}
+              - {label: Popis, name: popis, widget: string, required: false}
+          - label: "Videa"
+            name: "videa"
+            widget: "list"
+            required: false
+            fields:
+              - {label: "YouTube URL (embed)", name: url, widget: string}
+              - {label: Popis, name: popis, widget: string, required: false}

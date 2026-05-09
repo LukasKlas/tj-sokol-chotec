@@ -4,8 +4,11 @@
 - nazev: "Zápasy"
   url: "/zapasy"
 
-- nazev: "Tabulka"
-  url: "/tabulka"
+- nazev: "Galerie"
+  url: "/galerie"
 
 - nazev: "Novinky"
   url: "/blog"
+
+- nazev: "Kontakt"
+  url: "/kontakt"

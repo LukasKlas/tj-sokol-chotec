@@ -1,0 +1,11 @@
+fotky:
+  - src: "/images/galerie/foto1.jpg"
+    popis: "Zápas vs SK Rapid"
+  - src: "/images/galerie/foto2.jpg"
+    popis: "Tréning"
+  - src: "/images/galerie/foto3.jpg"
+    popis: "Tým 2026"
+
+videa:
+  - url: "https://www.youtube.com/embed/VIDEO_ID"
+    popis: "Sestřih zápasu"

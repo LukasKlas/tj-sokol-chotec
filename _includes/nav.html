@@ -13,7 +13,6 @@
       {%- for item in site.data.navigace -%}
       <li><a href="{{ item.url | relative_url }}" {%- if page.url == item.url %} class="active"{%- endif -%}>{{ item.nazev }}</a></li>
       {%- endfor -%}
-      <li><a href="#kontakt" class="nav-cta js-contact">Kontakt</a></li>
     </ul>
   </div>
 </nav>
