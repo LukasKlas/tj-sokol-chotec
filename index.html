@@ -45,7 +45,7 @@ featured_image: /images/social.jpg
      ============================================= -->
 {% assign nadchazejici = site.data.zapasy | where: "typ", "nadchazejici" | first %}
 {% if nadchazejici %}
-<section class="next-match">
+<section class="next-match" style="max-width: 1440px; margin: 0 auto;">
   <div class="wrap">
     <p class="next-match__label">Nejbližší zápas</p>
     <div class="next-match__grid">
@@ -116,8 +116,7 @@ featured_image: /images/social.jpg
         {% endif %}
         <div class="news-card__overlay">
           <span class="news-card__tag">{{ post.kategorie | default: "Novinky" }}</span>
-          <h3 class="news-card__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          <time class="news-card__date">{{ post.date | date: "%-d. %-m. %Y" }}</time>
+          <h3 class="news-card__title">{{ post.title }}</h3>
         </div>
       </a>
       {% endfor %}

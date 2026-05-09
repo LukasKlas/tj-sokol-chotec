@@ -3,7 +3,6 @@
 
 /* =============================================
    TJ SOKOL CHOTEČ — Hlavní stylesheet
-   Vychází z Design1-chotec
    ============================================= */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,7 +24,7 @@ body {
 }
 
 .wrap {
-  max-width: 100%; padding: 0 3rem;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -37,8 +36,8 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: #F0EEEB;        /* ← změň z var(--white) */
-  border-bottom: none;         /* ← změň z 3px solid var(--maroon) */
+  background: #F0EEEB;
+  border-bottom: none;
 }
 
 .nav-inner {
@@ -46,7 +45,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  max-width: 100%; padding: 0 3rem;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -59,8 +58,8 @@ body {
 }
 
 .nav-logo-img {
-  height: 52px;
-  width: 52px;
+  height: 104px;
+  width: 104px;
   object-fit: contain;
 }
 
@@ -137,6 +136,8 @@ body {
   grid-template-columns: 1fr 1fr;
   min-height: 44vh;
   overflow: hidden;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .hero-left {
@@ -260,6 +261,8 @@ body {
   grid-template-columns: repeat(4, 1fr);
   border-top: 3px solid var(--maroon);
   border-bottom: 3px solid var(--maroon);
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .stat {
@@ -548,34 +551,41 @@ body {
 }
 
 /* =============================================
-   NOVINKY
+   NOVINKY GRID
    ============================================= */
 .news-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 0;
   border: 1px solid var(--mid);
+  overflow: hidden;
 }
 
 .news-card {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  display: block;
+  text-decoration: none;
   min-height: 280px;
 }
 
+.news-card.featured {
+  grid-row: span 2;
+  min-height: 400px;
+}
+
 .news-card:not(:last-child) { border-right: 1px solid var(--mid); }
-.news-card.featured { grid-row: span 2; min-height: 400px; }
 
 .news-card__img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: grayscale(60%);
   display: block;
   transition: transform .4s, filter .4s;
-  position: absolute;
-  inset: 0;
 }
 
 .news-card:hover .news-card__img { transform: scale(1.05); filter: grayscale(10%); }
@@ -588,6 +598,7 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   padding: 1.5rem;
+  z-index: 1;
 }
 
 .news-card__tag {
@@ -620,11 +631,96 @@ body {
 /* =============================================
    BLOG STRÁNKA
    ============================================= */
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
+
+.blog-row {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--mid);
+  align-items: start;
+}
+
+.blog-row__img-wrap {
+  display: block;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.blog-row__img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(30%);
+  transition: transform .3s, filter .3s;
+}
+
+.blog-row:hover .blog-row__img { transform: scale(1.04); filter: grayscale(0); }
+
+.blog-row__content {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.blog-row__tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--maroon);
+}
+
+.blog-row__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  line-height: 1.05;
+}
+
+.blog-row__title a {
+  color: var(--black);
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.blog-row__title a:hover { color: var(--maroon); }
+
+.blog-row__date {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+.blog-row__excerpt {
+  font-size: .95rem;
+  line-height: 1.6;
+  color: #666;
+  margin-top: .3rem;
+}
+
+.blog-row__link {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--maroon);
+  text-decoration: none;
+  margin-top: .5rem;
+  display: inline-block;
+  transition: letter-spacing .2s;
+}
+
+.blog-row__link:hover { letter-spacing: 3px; }
 
 /* =============================================
    POST DETAIL
@@ -709,7 +805,7 @@ body {
 }
 
 /* =============================================
-   KONTAKT (popup)
+   KONTAKT popup
    ============================================= */
 .contact {
   position: fixed;
@@ -724,10 +820,7 @@ body {
   transition: opacity .3s;
 }
 
-.contact.is-open {
-  opacity: 1;
-  pointer-events: all;
-}
+.contact.is-open { opacity: 1; pointer-events: all; }
 
 .contact__close {
   position: absolute;
@@ -744,15 +837,9 @@ body {
 
 .contact__close:hover { opacity: 1; }
 
-.contact__wrap {
-  max-width: 520px;
-  width: 100%;
-  padding: 2rem;
-}
+.contact__wrap { max-width: 520px; width: 100%; padding: 2rem; }
 
-.contact__header {
-  margin-bottom: 2rem;
-}
+.contact__header { margin-bottom: 2rem; }
 
 .contact__header h2 {
   font-family: 'Bebas Neue', sans-serif;
@@ -762,16 +849,10 @@ body {
   margin-bottom: .5rem;
 }
 
-.contact__header p {
-  color: #aaa;
-  font-size: .9rem;
-}
-
+.contact__header p { color: #aaa; font-size: .9rem; }
 .contact__header a { color: var(--maroon); }
 
-.input-group {
-  margin-bottom: 1.2rem;
-}
+.input-group { margin-bottom: 1.2rem; }
 
 .input-group label {
   display: block;
@@ -797,10 +878,7 @@ body {
 }
 
 .input-group input:focus,
-.input-group textarea:focus {
-  outline: none;
-  border-color: var(--maroon);
-}
+.input-group textarea:focus { outline: none; border-color: var(--maroon); }
 
 .input-group textarea { resize: vertical; }
 
@@ -821,10 +899,7 @@ body {
   width: 100%;
 }
 
-.input-submit input:hover {
-  background: transparent;
-  color: var(--maroon);
-}
+.input-submit input:hover { background: transparent; color: var(--maroon); }
 
 /* =============================================
    PATIČKA
@@ -836,7 +911,7 @@ body {
 }
 
 .footer-inner {
-  max-width: 100%; padding: 0 3rem;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
@@ -855,10 +930,7 @@ body {
 
 .footer-logo span { color: rgba(255,255,255,.5); }
 
-.footer-links {
-  display: flex;
-  gap: 1.5rem;
-}
+.footer-links { display: flex; gap: 1.5rem; }
 
 .footer-links a {
   font-family: 'Barlow Condensed', sans-serif;
@@ -880,6 +952,41 @@ body {
   text-align: center;
   margin-top: .5rem;
 }
+
+/* =============================================
+   PAGINACE
+   ============================================= */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--mid);
+}
+
+.pagination__info {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .9rem;
+  letter-spacing: 2px;
+  color: #aaa;
+}
+
+.btn-outline-dark {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: .6rem 1.5rem;
+  border: 2px solid var(--black);
+  color: var(--black);
+  text-decoration: none;
+  transition: all .2s;
+}
+
+.btn-outline-dark:hover { background: var(--black); color: var(--white); }
 
 /* =============================================
    ANIMACE
@@ -913,7 +1020,12 @@ body {
   .match-team--home, .match-team--away { text-align: left; padding: 0; }
   .match-score { text-align: left; }
   .match-venue { text-align: left; }
-  .blog-grid { grid-template-columns: 1fr; }
+  .blog-list { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .blog-row { grid-template-columns: 1fr; }
+  .blog-row__img { height: 220px; }
 }
 
 @media (max-width: 600px) {
@@ -925,175 +1037,70 @@ body {
   .section-title { font-size: 2.5rem; }
 }
 
-/* =============================================
-   BLOG — seznam článků
-   ============================================= */
-.blog-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+.news-card:not(:has(.news-card__img)) {
+  background: var(--maroon);
 }
 
-.blog-row {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 2rem;
-  padding: 2.5rem 0;
-  border-bottom: 1px solid var(--mid);
-  align-items: start;
+/* Fix pro případ kdy je v gridu jen jedna novinka */
+.news-grid:has(.news-card:only-child) .news-card.featured {
+  grid-row: span 1;
+  grid-column: span 3;
 }
 
-.blog-row__img-wrap {
-  display: block;
-  overflow: hidden;
-  border-radius: 2px;
-}
-
-.blog-row__img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
-  filter: grayscale(30%);
-  transition: transform .3s, filter .3s;
-}
-
-.blog-row:hover .blog-row__img {
-  transform: scale(1.04);
-  filter: grayscale(0);
-}
-
-.blog-row__content {
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
-}
-
-.blog-row__tag {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: .75rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--maroon);
-}
-
-.blog-row__title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2rem;
-  letter-spacing: 1px;
-  line-height: 1.05;
-}
-
-.blog-row__title a {
-  color: var(--black);
-  text-decoration: none;
-  transition: color .2s;
-}
-
-.blog-row__title a:hover { color: var(--maroon); }
-
-.blog-row__date {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: .8rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #aaa;
-}
-
-.blog-row__excerpt {
-  font-size: .95rem;
-  line-height: 1.6;
-  color: #666;
-  margin-top: .3rem;
-}
-
-.blog-row__link {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: .9rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--maroon);
-  text-decoration: none;
-  margin-top: .5rem;
-  display: inline-block;
-  transition: letter-spacing .2s;
-}
-
-.blog-row__link:hover { letter-spacing: 3px; }
-
-/* Paginace */
-.pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--mid);
-}
-
-.pagination__info {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: .9rem;
-  letter-spacing: 2px;
-  color: #aaa;
-}
-
-.btn-outline-dark {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: .9rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: .6rem 1.5rem;
-  border: 2px solid var(--black);
-  color: var(--black);
-  text-decoration: none;
-  transition: all .2s;
-}
-
-.btn-outline-dark:hover {
-  background: var(--black);
-  color: var(--white);
-}
-
-@media (max-width: 700px) {
-  .blog-row { grid-template-columns: 1fr; }
-  .blog-row__img { height: 220px; }
-}
-
-/* Limitace šířky 1440px */
-.wrap {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.hero {
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
-.stats-bar {
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
-.nav-inner {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-/* Logo větší */
 .nav-logo-img {
-  height: 104px;
-  width: 104px;
+  mix-blend-mode: multiply;
 }
 
-.footer-inner {
+.next-match {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-post {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 2rem;
+}
+
+.post__header {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.post__header {
+  background: var(--white);
+  padding: 3rem 0 2rem;
+  margin-bottom: 0;
+}
+
+.post__title {
+  color: var(--black);
+}
+
+.post__date {
+  color: #aaa;
+}
+
+.post__image-wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.post__header .wrap {
+  text-align: right;
+}
+
+.post__kategorie {
+  font-size: 2.4rem;
+  letter-spacing: 6px;
+}
+
+.post__date {
+  font-size: 2.4rem;
+  letter-spacing: 4px;
+}
+
+.post__header .wrap {
+  text-align: left;
+  max-width: 1440px;
 }

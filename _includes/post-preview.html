@@ -1,12 +1,10 @@
-<article class="news-card">
+<a href="{{ post.url | relative_url }}" class="news-card">
   {% if post.featured_image %}
-  <a href="{{ post.url | relative_url }}">
-    <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}" class="news-card__img">
-  </a>
+  <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}" class="news-card__img">
   {% endif %}
   <div class="news-card__overlay">
     <span class="news-card__tag">{{ post.kategorie | default: "Novinky" }}</span>
-    <h3 class="news-card__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    <h3 class="news-card__title">{{ post.title }}</h3>
     <time class="news-card__date">{{ post.date | date: "%-d. %-m. %Y" }}</time>
   </div>
-</article>
+</a>

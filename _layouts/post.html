@@ -9,17 +9,19 @@ layout: default
       <h1 class="post__title">{{ page.title }}</h1>
       <time class="post__date">{{ page.date | date: "%-d. %-m. %Y" }}</time>
     </div>
-    {% if page.featured_image %}
-    <img src="{{ page.featured_image | relative_url }}" class="post__featured-image" alt="{{ page.title }}">
-    {% endif %}
   </header>
+
+  {% if page.featured_image %}
+  <div class="post__image-wrap">
+    <img src="{{ page.featured_image | relative_url }}" class="post__featured-image" alt="{{ page.title }}">
+  </div>
+  {% endif %}
 
   <section class="post-full">
     <div class="wrap">
       <article class="post__content">
         {{ content }}
       </article>
-
       <div class="post__nav">
         {% if page.previous.url %}
         <a class="post__nav-prev" href="{{ page.previous.url | relative_url }}">← {{ page.previous.title }}</a>
