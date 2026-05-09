@@ -25,7 +25,7 @@ body {
 }
 
 .wrap {
-  max-width: 1440px; margin: 0 auto; padding: 0 2rem;
+  max-width: 100%; padding: 0 3rem;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -46,7 +46,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  max-width: 1440px; margin: 0 auto; padding: 0 2rem;
+  max-width: 100%; padding: 0 3rem;
   margin: 0 auto;
 }
 
@@ -59,8 +59,8 @@ body {
 }
 
 .nav-logo-img {
-  height: 104px;
-  width: 104px;
+  height: 52px;
+  width: 52px;
   object-fit: contain;
 }
 
@@ -836,7 +836,7 @@ body {
 }
 
 .footer-inner {
-  max-width: 1440px; margin: 0 auto; padding: 0 2rem;
+  max-width: 100%; padding: 0 3rem;
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
@@ -1061,24 +1061,4 @@ body {
 @media (max-width: 700px) {
   .blog-row { grid-template-columns: 1fr; }
   .blog-row__img { height: 220px; }
-}
-
-.hero {
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
-.stats-bar {
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
-.next-match, .section, .matches-section, .team-section, .news-section, .recent-posts {
-  max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.nav-logo-img {
-  mix-blend-mode: multiply;
 }
