@@ -33,7 +33,7 @@ permalink: /kontakt
         <p>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
       </div>
       <div class="kontakt-mapa">
-        <iframe style="border:none" src="https://mapy.com/s/humelagove" width="400" height="280" frameborder="0">
+        <iframe style="border:none" src="https://mapy.com/s/pupajeloru" width="500" height="333" frameborder="0">
         </iframe>
       </div>
     </div>

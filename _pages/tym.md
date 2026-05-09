@@ -11,7 +11,7 @@ permalink: /tym
       <div class="section-line"></div>
     </div>
     <div class="team-grid">
-      {% for hrac in site.data.hraci %}
+      {% for hrac in site.data.hraci.items %}
       <div class="player-card">
         {% if hrac.foto and hrac.foto != "" %}
         <img src="{{ hrac.foto | relative_url }}" alt="{{ hrac.jmeno }}" class="player-card__img">
