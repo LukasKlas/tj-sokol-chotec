@@ -1,11 +1,4 @@
-- nazev: "Partner 1"
-  logo: ""
-  url: ""
-
-- nazev: "Partner 2"
-  logo: ""
-  url: ""
-
-- nazev: "Partner 3"
-  logo: ""
-  url: ""
+items:
+  - nazev: Autoflex Jeneč
+    logo: /assets/images/uploads/PHOTO-2026-05-04-20-58-38_19.jpg
+    url: https://www.autoflex.cz
