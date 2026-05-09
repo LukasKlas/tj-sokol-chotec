@@ -1,1 +1,17 @@
-items: []
+items:
+  - cislo: 93
+    jmeno: Lukáš špílmmchr
+    pozice: Záložník
+    foto: /assets/images/uploads/PHOTO-2026-05-04-20-58-38_10.jpg
+  - cislo: 13
+    jmeno: Kapitán Vašek
+    pozice: Záložník
+    foto: /assets/images/uploads/PHOTO-2026-05-04-20-58-38_11.jpg
+  - cislo: 8
+    jmeno: Balda Brousek
+    pozice: Obránce
+    foto: /assets/images/uploads/PHOTO-2026-05-04-20-58-38_14.jpg
+  - cislo: 6
+    jmeno: Camara
+    pozice: Záložník
+    foto: /assets/images/uploads/PHOTO-2026-05-04-20-58-38_9.jpg
