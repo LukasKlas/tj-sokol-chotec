@@ -1062,3 +1062,38 @@ body {
   .blog-row { grid-template-columns: 1fr; }
   .blog-row__img { height: 220px; }
 }
+
+/* Limitace šířky 1440px */
+.wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.stats-bar {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.nav-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Logo větší */
+.nav-logo-img {
+  height: 104px;
+  width: 104px;
+}
+
+.footer-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}

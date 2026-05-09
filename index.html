@@ -110,7 +110,7 @@ featured_image: /images/social.jpg
     </div>
     <div class="news-grid">
       {% for post in site.posts limit: 3 %}
-      {% if forloop.first %}<article class="news-card featured">{% else %}<article class="news-card">{% endif %}
+      {% if forloop.first %}<a href="{{ post.url | relative_url }}" class="news-card featured">{% else %}<a href="{{ post.url | relative_url }}" class="news-card">{% endif %}
         {% if post.featured_image %}
         <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}" class="news-card__img">
         {% endif %}
@@ -119,7 +119,7 @@ featured_image: /images/social.jpg
           <h3 class="news-card__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
           <time class="news-card__date">{{ post.date | date: "%-d. %-m. %Y" }}</time>
         </div>
-      </article>
+      </a>
       {% endfor %}
     </div>
   </div>
