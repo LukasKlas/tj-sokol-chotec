@@ -1,2 +1,12 @@
-fotky: []
+fotky:
+  - src: /assets/images/uploads/PHOTO-2026-05-04-20-58-38_18.jpg
+    popis: Miňovští
+  - src: /assets/images/uploads/PHOTO-2026-05-04-20-58-38_1.jpg
+    popis: Mládež
+  - src: /assets/images/uploads/PHOTO-2026-05-04-20-58-38.jpg
+    popis: Foto 3
+  - src: /assets/images/uploads/PHOTO-2026-05-04-20-58-38_21.jpg
+    popis: Zimní příprava všech zmrzlých
+  - src: /assets/images/uploads/PHOTO-2026-05-04-20-58-38_25.jpg
+    popis: Slavé vítěztví, žádný Verdun, ale Krňany
 videa: []
