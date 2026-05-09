@@ -1104,3 +1104,41 @@ body {
   text-align: left;
   max-width: 1440px;
 }
+
+.post__content {
+  font-size: 1.3rem;
+  line-height: 1.9;
+}
+
+.post__content {
+  font-size: 1.6rem;
+  line-height: 2;
+}
+
+.post__content {
+  font-size: 1.3rem;
+  line-height: 1.9;
+}
+
+.post__nav a {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+
+.post__kategorie {
+  font-size: 1.68rem;
+  letter-spacing: 4px;
+}
+
+.post__title {
+  font-size: clamp(1.75rem, 3.5vw, 2.8rem);
+}
+
+.post__date {
+  font-size: 1.68rem;
+}
+
+.blog-row__tag { font-size: 1rem; }
+.blog-row__date { font-size: 1.05rem; }
+.blog-row__excerpt { font-size: 1.25rem; line-height: 1.7; }
+.blog-row__link { font-size: 1.2rem; }

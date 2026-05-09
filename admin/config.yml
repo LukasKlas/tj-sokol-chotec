@@ -2,21 +2,66 @@ backend:
   name: github
   repo: LukasKlas/tj-sokol-chotec
   branch: main
-  base_url: https://sveltia-cms-auth.YOUR_WORKER.workers.dev  # ← URL z kroku 2
+  base_url: https://sveltia-cms-auth.lukas-klastersky.workers.dev
 
 media_folder: assets/images/uploads
 public_folder: /assets/images/uploads
 
 collections:
+
   - name: posts
     label: Aktuality
+    label_singular: Novinka
     folder: _posts
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: Nadpis, name: title, widget: string}
       - {label: Datum, name: date, widget: datetime}
-      - {label: Titulni foto, name: image, widget: image, required: false}
+      - {label: Titulni foto, name: featured_image, widget: image, required: false}
+      - {label: Kategorie, name: kategorie, widget: select, options: [Aktuality, Zapasy, Klub], default: Aktuality}
       - {label: Obsah, name: body, widget: markdown}
-      - {label: Kategorie, name: categories, widget: select,
-         options: [Aktuality, Zapasy, Mladez, Klub]}
+
+  - name: data
+    label: Data
+    files:
+
+      - name: zapasy
+        label: Zápasy
+        file: _data/zapasy.yml
+        fields:
+          - label: Zápasy
+            name: items
+            widget: list
+            fields:
+              - {label: Datum, name: datum, widget: string}
+              - {label: Domácí, name: domaci, widget: string}
+              - {label: Hosté, name: hoste, widget: string}
+              - {label: Skóre, name: skore, widget: string, default: "– : –"}
+              - {label: Čas, name: cas, widget: string, required: false}
+              - {label: Místo, name: misto, widget: select, options: [Domov, Venku]}
+              - {label: Typ, name: typ, widget: select, options: [{label: Výsledek, value: vysledek}, {label: Nejbližší, value: nadchazejici}, {label: Program, value: program}]}
+
+      - name: statistiky
+        label: Statistiky
+        file: _data/statistiky.yml
+        fields:
+          - label: Statistiky
+            name: items
+            widget: list
+            fields:
+              - {label: Hodnota, name: hodnota, widget: string}
+              - {label: Popis, name: popis, widget: string}
+
+      - name: hraci
+        label: Hráči
+        file: _data/hraci.yml
+        fields:
+          - label: Hráči
+            name: items
+            widget: list
+            fields:
+              - {label: Číslo, name: cislo, widget: number}
+              - {label: Jméno, name: jmeno, widget: string}
+              - {label: Pozice, name: pozice, widget: select, options: [Brankář, Obránce, Záložník, Útočník]}
+              - {label: Foto, name: foto, widget: image, required: false}
