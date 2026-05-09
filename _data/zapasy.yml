@@ -1,8 +1,15 @@
 items:
-  - datum: 10.5.
+  - datum: 10.5.2026
     domaci: TJ Sokol Choteč
     hoste: FK Horoměřice
     skore: '– : –'
     cas: 17:00
     misto: Domov
     typ: nadchazejici
+  - datum: 2.5.2206
+    domaci: TJ Krňany
+    hoste: TJ Sokol Choteč
+    skore: 2:4
+    cas: 17:00
+    misto: Venku
+    typ: vysledek
